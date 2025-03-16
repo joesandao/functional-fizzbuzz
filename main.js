@@ -2,10 +2,10 @@ const fizzBuzz = Array.from({ length: 100 }, (_, i) => i + 1)
   .map(n => {
     const fizz = n % 3 === 0;
     const buzz = n % 5 === 0;
-    return (fizz && buzz && 'FizzBuzz') || (fizz && 'Fizz') || (buzz && 'Buzz') || n;
+    return `${fizz ? 'Fizz' : ''}${buzz ? 'Buzz' : ''}` || n;
   });
 
-const AddPatterns = numbers => 
+const addPatterns = numbers => 
   numbers.map(n => {
     const aho = n % 3 === 0 || n.toString().includes('3');
     const quzz = n % 7 === 0;
@@ -20,6 +20,6 @@ const AddPatterns = numbers =>
     return result || n;
   });
 
-const addedFizzBuzz = AddPatterns(fizzBuzz);
+const addedFizzBuzz = addPatterns(fizzBuzz);
 
 console.log(addedFizzBuzz);
